@@ -50,7 +50,7 @@ Visit `http://localhost:3000` to see your application.
 
 ### Document Upload
 ```
-POST /api/document/process (proxies to TextLayer)
+POST /api/process/document (proxies to TextLayer)
 Content-Type: multipart/form-data
 Body: FormData with 'file' field
 ```

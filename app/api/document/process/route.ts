@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     }
     
     // Forward to TextLayer API
-    const response = await fetch(`${BASE_URL}/document/process`, {
+    const response = await fetch(`${BASE_URL}/actions/process/document`, {
       method: 'POST',
       headers: {
         // TODO: Add authentication headers if required
