@@ -1,0 +1,1 @@
+const BASE_URL = 'https://core.dev.textlayer.ai/v1'

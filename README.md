@@ -2,9 +2,7 @@
 
 ## Overview
 
-Welcome to your technical interview! You have **90 minutes** to complete this challenge:
-- **60 minutes**: Coding implementation
-- **30 minutes**: Discussion of your solution
+Welcome to your technical interview!
 
 ## The Challenge: AI Document Chat Interface
 
@@ -36,8 +34,7 @@ Visit `http://localhost:3000` to see your application.
 │   ├── api/
 │   │   ├── chat/route.ts       # Non-streaming chat endpoint
 │   │   ├── chat/stream/route.ts # Streaming chat endpoint  
-│   │   ├── document/process/route.ts # Document upload
-│   │   └── analyze/route.ts    # Document analysis
+│   │   └── document/process/route.ts # Document upload
 │   └── layout.tsx              # Root layout
 ├── components/
 │   ├── ChatMessage.tsx         # Individual message component
@@ -47,40 +44,36 @@ Visit `http://localhost:3000` to see your application.
 └── lib/utils.ts               # Utility functions
 ```
 
-## API Endpoints (Mock Implementation Provided)
+## API Endpoints (TextLayer Integration)
+
+**Base URL**: `https://core.dev.textlayer.ai/v1`
 
 ### Document Upload
 ```
-POST /api/document/process
+POST /api/document/process (proxies to TextLayer)
 Content-Type: multipart/form-data
 Body: FormData with 'file' field
 ```
 
 ### Streaming Chat
 ```
-POST /api/chat/stream
+POST /api/chat/stream (proxies to TextLayer)
 Content-Type: application/json
 Body: { "messages": [{ "role": "user", "content": "question" }] }
 ```
 
 ### Regular Chat
 ```
-POST /api/chat
+POST /api/chat (proxies to TextLayer)
 Content-Type: application/json
 Body: { "messages": [{ "role": "user", "content": "question" }] }
-```
-
-### Document Analysis
-```
-POST /api/analyze
-Content-Type: application/json
 ```
 
 ## Implementation Tips
 
 1. **Start with Level 1** - Get the basic functionality working first
 2. **Use the provided types** - Everything is pre-typed in `types/chat.ts`
-3. **Mock data is provided** - API endpoints return mock responses
+3. **API endpoints are proxied** - They forward to TextLayer's real API
 4. **Focus on user experience** - Smooth interactions and good feedback
 5. **Handle edge cases** - Empty states, errors, loading states
 
@@ -89,12 +82,12 @@ Content-Type: application/json
 - **Next.js 15** with App Router
 - **TypeScript** for type safety
 - **Tailwind CSS** for styling
-- **Vercel AI SDK** for streaming (to be implemented)
+- **TextLayer API** for AI document processing
 
 ## Need Help?
 
 - Check the TODOs in each file for guidance
-- API endpoints are already set up with mock responses
+- API endpoints are already set up and proxy to TextLayer
 - Types are defined in `types/chat.ts`
 - Utility functions are available in `lib/utils.ts`
 

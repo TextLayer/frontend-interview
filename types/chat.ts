@@ -6,12 +6,6 @@ export type ChatMessage = {
   isStreaming?: boolean
 }
 
-export type DocumentAnalysis = {
-  summary: string
-  keyTopics: string[]
-  wordCount: number
-}
-
 export type ApiResponse<T> = {
   success: boolean
   status: number

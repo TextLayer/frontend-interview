@@ -2,29 +2,25 @@
 
 import * as React from 'react'
 import { useState } from 'react'
-import type { ChatMessage, DocumentAnalysis } from '@/types/chat'
+import type { ChatMessage } from '@/types/chat'
 
 export default function ChatPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([])
-  const [documentContent, setDocumentContent] = useState('')
-  const [isAnalyzing, setIsAnalyzing] = useState(false)
-  const [analysis, setAnalysis] = useState<DocumentAnalysis | null>(null)
+  const [isUploading, setIsUploading] = useState(false)
 
-  // TODO: Implement document analysis
-  const analyzeDocument = async () => {
-    // Call /api/analyze
+  // TODO: Implement document upload
+  const handleDocumentUpload = async (file: File) => {
+    // Call /api/document/process
   }
 
   // TODO: Implement streaming chat
   const sendMessage = async (message: string) => {
-    // Call /api/chat with streaming response
+    // Call /api/chat/stream with streaming response
   }
 
   return (
     <div className="max-w-4xl mx-auto p-4 h-screen flex flex-col">
       {/* TODO: Document upload section */}
-      
-      {/* TODO: Document analysis display */}
       
       {/* TODO: Chat messages list */}
       
