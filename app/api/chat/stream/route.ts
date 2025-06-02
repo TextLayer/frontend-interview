@@ -9,7 +9,6 @@ export async function POST(request: NextRequest) {
     const body: StreamingChatRequest = await request.json()
     
     // TODO: Forward streaming request to TextLayer API
-    // TODO: Handle authentication if required
     // TODO: Implement proper streaming response handling
     // TODO: Add error handling for streaming failures
     
@@ -17,8 +16,6 @@ export async function POST(request: NextRequest) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // TODO: Add authentication headers if required
-        // 'Authorization': `Bearer ${process.env.TEXTLAYER_API_KEY}`,
       },
       body: JSON.stringify(body),
     })
